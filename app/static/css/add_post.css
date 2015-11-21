@@ -1,0 +1,15 @@
+.form-block{width: 1000px;margin: 0 auto;padding: 20px 0;}
+.form-block .form-item-title{text-align: center;height: 30px;line-height: 30px;margin: 10px 0;}
+.form-block .form-item-title input{width: 100%;text-align: center;font-weight: bold;font-family: '宋体';outline: none;border: 0;font-size: 25px;}
+.form-block .form-item-content{padding: 10px 30px;border-top: 1px solid #ddd;}
+#editer-content{border: 0;}
+.form-item-buttons{margin: 10px 0;}
+.form-item-content .item{cursor: pointer;position:relative;width: 150px;height: 180px;float: left;margin-right: 10px;font-size: 12px;background-color: #fff;box-shadow: 0 1px 3px rgba(0,0,0,.3);-moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);}
+.form-item-content .item .info{position: absolute;left: 0;bottom: 0;width:150px;height: 30px;background: #fff;text-align: center;}
+.form-item-content .item .info span{display: block;line-height: 30px;width: 150px;}
+.form-item-content .item-add{background: #f6f5f5;}
+.form-item-content .item-add .add-icon{background: url(../images/icon_add.png) 0 0 no-repeat; width: 50px;height: 50px;margin: 50px auto;display: block;}
+.form-item-content .item-add:hover{background: #fff;}
+.form-item-content .item-add:hover .add-icon{background: url(../images/icon_add.png) 0 -80px no-repeat;}
+.form-item-content .item-photo{overflow: hidden;}
+.form-item-content .item-photo img{border: 0;}

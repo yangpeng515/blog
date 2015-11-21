@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>ivany</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
+		<link rel="stylesheet" href="static/css/app.css" />
+		<link rel="stylesheet" type="text/css" href="static/css/index.css"/>
+		<script type="text/javascript" src="static/js/jquery.min.js" ></script>
+		<script type="text/javascript" src="static/js/bootstrap.js" ></script>
+	</head>
+	<body class="main">
+		{% if current_user.is_authenticated %}
+		<div class="menu">
+			<li class="dropdown" style="position: absolute;right: 50px;top: 10px;">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">
+					操作设置
+				</a>
+				<ul class="dropdown-menu animated fadeInRight" style="width: 100px;min-width: 100px;">
+					<li>
+						<span class="arrow top"></span>
+						<a href="{{ url_for('main.add') }}">添加文章</a>
+					</li>
+					<li>
+						<a href="{{ url_for('main.add_photo') }}">添加图片</a>
+					</li>
+					<li>
+						<a href="{{ url_for('main.add_link') }}">添加转载</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="{{ url_for('main.logout') }}">退出</a>
+					</li>
+				</ul>
+			</li>
+		</div>
+		{% endif %}
+		<div class="header">
+			<div class="userinfo">
+				<a href="javascript:;" class="avatar">
+					<img src="static/images/m22.jpg" />
+				</a>
+				<div class="name"><a href="#">ivany</a></div>
+				<div class="sign">生命在于运动，奔跑吧程序员...</div>
+			</div>
+			<div class="navbar">
+				<div class="item">
+					<a href="mailto:yangpeng515@126.com">私信</a>
+					<div class="bg">私信</div>
+				</div>
+				
+				<div class="item">
+					<a href="https://github.com/yangpeng515" target="_blank">Github</a>
+					<div class="bg">Github</div>
+				</div>
+				
+				<div class="item">
+					<a href="#">RSS</a>
+					<div class="bg">RSS</div>
+				</div>
+				
+				<div class="item" style="width: 150px;">
+					<div class="search">
+						<input type="text" placeholder="搜索" />
+					</div>
+					<div class="bg" style="width: 150px;"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="blog-post">
+				<div class="post-item">
+					<div class="post-media">
+						<a href="post.html"><img src="static/images/805862858422848250.jpg" class="img-full"></a>
+					</div>
+					<div class="caption wrapper-lg">
+						<h2 class="post-title"><a href="#">7 things you need to know about the flat design</a></h2>
+						<div class="post-sum">
+							
+						</div>
+						<div class="line line-lg"></div>
+						<div class="text-muted">
+							<i class="fa fa-user icon-muted"></i> by <a href="#" class="m-r-sm">Admin</a>
+							<i class="fa fa-clock-o icon-muted"></i> Feb 20, 2013
+							<a href="#" class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> 2 comments</a>
+						</div>
+					</div>
+				</div>
+				<div class="post-item">
+					<div class="caption wrapper-lg">
+						<h2 class="post-title"><a href="#">7 things you need to know about the flat design</a></h2>
+						<div class="post-sum">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.
+							</p>
+						</div>
+						<div class="line line-lg"></div>
+						<div class="text-muted">
+							<i class="fa fa-user icon-muted"></i> by <a href="#" class="m-r-sm">Admin</a>
+							<i class="fa fa-clock-o icon-muted"></i> Feb 20, 2013
+							<a href="#" class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> 2 comments</a>
+						</div>
+					</div>
+				</div>
+				<div class="post-item">
+					<div class="post-media">
+						<img src="static/images/6597732772169932417.jpg" class="img-full">
+					</div>
+					<div class="caption wrapper-lg">
+						<h2 class="post-title"><a href="#">Bootstrap 3: What you need to know</a></h2>
+						<div class="post-sum">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.
+							</p>
+							
+						</div>
+						<div class="line line-lg"></div>
+						<div class="text-muted">
+							<i class="fa fa-user icon-muted"></i> by <a href="#" class="m-r-sm">Admin</a>
+							<i class="fa fa-clock-o icon-muted"></i> Feb 15, 2013
+							<a href="#" class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> 4 comments</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="footer">
+			<div class="copyr">
+				© <a href="http://www.ivany.me/">ivany</a>
+				<span class="sep">|</span>
+				Powered by <a href="http://www.lofter.com">LOFTER</a>
+				<a href="http://www.miitbeian.gov.cn/" target="_blank">浙ICP备15005975号</a>
+			</div>
+				
+		</div>
+	</body>
+</html>
