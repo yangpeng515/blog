@@ -2,6 +2,7 @@ __author__ = 'ivany'
 
 from datetime import datetime
 from app import db
+from sqlalchemy import desc
 from flask.ext.login import UserMixin
 
 class User:
@@ -44,6 +45,7 @@ class Article(db.Model):
     ta_title = db.Column(db.String(225))
     ta_content = db.Column(db.Text)
     ta_link = db.Column(db.String(225))
+    ta_desp = db.Column(db.String(500))
     ta_picurl = db.Column(db.String(225))
     ta_category = db.Column(db.Integer, default=0)
     ta_type = db.Column(db.Integer)
@@ -56,8 +58,9 @@ class Article(db.Model):
             'title': self.ta_title,
             'link': self.ta_link,
             'type': self.ta_type,
-            'addtime': self.ta_addtime,
-            'pic': self.ta_picurl
+            'addtime': self.ta_addtime.strftime('%Y-%m-%d %H:%M:%S'),
+            'pic': self.ta_picurl,
+            'desp': self.ta_desp
         }
 
     @staticmethod
@@ -67,7 +70,7 @@ class Article(db.Model):
 
     @staticmethod
     def list(page, size):
-        result = Article.query.filter_by(ta_status=1).paginate(page, size, False)
+        result = Article.query.filter_by(ta_status=1).order_by(desc(Article.ta_update_time)).paginate(page, size, False)
         articles = result.items
         list = []
         if articles and len(articles) > 0:

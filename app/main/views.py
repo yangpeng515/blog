@@ -5,9 +5,8 @@ from flask.ext.login import current_user, logout_user, login_required, login_use
 from . import main
 from app import login_manager
 from ..models import Article, Comment, Member
-from ..utils import md5
+from ..utils import md5, filterHtml
 from datetime import datetime
-from config import config
 
 @main.before_request
 def before_request():
@@ -74,6 +73,7 @@ def add():
             article.ta_status = 1
             article.ta_member_id = session['tm_id']
             article.ta_content = content
+            article.ta_desp = filterHtml(html)[0:100]
 
             loginUser = g.member
             htmlContent = render_template("post.html",type=type, title=title, html=html, datetime=article.ta_addtime.strftime('%Y-%m-%d %H:%M:%S'), user=loginUser.tm_nickname)
@@ -127,5 +127,5 @@ def post_list():
 
     list = Article.list(int(page), int(size))
 
-    return jsonify({'list': list, page: page, size: len(list)})
+    return jsonify({'list': list, 'page': int(page), 'size': len(list)})
 

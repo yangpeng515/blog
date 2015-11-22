@@ -1,4 +1,5 @@
-.main{background-color: #0b3b41;color: white;}
+html,body{height: 100%;background-color: #0b3b41;}
+.main{color: white;}
 .menu{position: absolute;left: 0;height: 50px;width: 100%;}
 .menu .add-menu{position: absolute;right: 150px;top: 0;}
 .header{}
